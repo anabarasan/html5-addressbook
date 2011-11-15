@@ -1,0 +1,80 @@
+<!DOCTYPE HTML>
+<html style="height:95%;" manifest="/static/offline.appcache">
+<head>
+	<title>
+		Address Book
+	</title>
+	<script type="text/javascript" src="/static/js/form2object.js"></script>
+	<script type="text/javascript" src="/static/js/json2.js"></script>
+	<script type="text/javascript" src="/static/js/browserdetect.js"></script>
+	<script type="text/javascript" src="/static/js/addressbook.js"></script>
+	<style>
+		img,a{
+			cursor:pointer;
+		}
+	</style>
+</head>
+<body style="padding-left:5px; padding-right:5px; height:100%; background-color:orange;" onload="javascript:initialize();">
+	<table id="contacts" align='center' style="height:auto; height:100%; width:100%; display:none;">
+		<tr style="vertical-align:top;">
+			<td style="width:25%; padding:2px; border-radius:10px; background-color:#EFEFEF">
+				<div id="ContactList" style="height:auto; height:100%; overflow:auto; padding:3px;">
+				</div>
+			</td>
+			<td style="width:3px;">
+			</td>
+			<td style="padding:2px; border-radius:10px; background-color:#EFEFEF;">
+				<a href="javascript:void('0');" style="text-decoration:none; float:right; valign:top;" onClick="javascript:newContact();">Add Contact</a>
+				<div id="ContactDetails" style="display:none;">
+					<!-- supposed to be the readonly display of contact details.  But, is it required? -->
+				</div>
+				<div id="ContactEditor" style="display:none;" align="center">
+					<form id='frmAddressEditor' action="javascript:addContact()">
+						<table>
+							<tr>
+								<td><label for="firstname">First Name</label></td>
+								<td colspan="2"><input type="text" id="firstname" name="firstname" value="" style="width:300px;"/></td>
+							</tr>
+							<tr>
+								<td><label for="lastname">Last Name</label></td>
+								<td colspan="2"><input type="text" id="lastname" name="lastname" value="" style="width:300px;"/></td>
+							</tr>
+							<tr>
+								<td><label for="home">Home</label></td>
+								<td><input type="text" id="home" name="home" value="" style="width:300px;"/></td>
+							</tr>
+							<tr>
+								<td><label for="work">Work</label></td>
+								<td><input type="text" id="work" name="work" value="" style="width:300px;"/></td>
+							</tr>
+							<tr>
+								<td><label for="mobile">Mobile</label></td>
+								<td><input type="text" id="mobile" name="mobile" value="" style="width:300px;"/></td>
+							</tr>
+							<tr>
+								<td><label for="address">Address 1</label></td>
+								<td><input type="text" id="address1" name="address1" value="" style="width:300px;"/></td>
+							</tr>
+							<tr>
+								<td><label for="address">Address 2</label></td>
+								<td><input type="text" id="address2" name="address2" value="" style="width:300px;"/></td>
+							</tr>
+							<tr>
+								<td><label for="address">Address 3</label></td>
+								<td><input type="text" id="address3" name="address3" value="" style="width:300px;"/></td>
+							</tr>
+							<tr>
+								<td style="vertical-align:top;"><label for="notes">Notes</label></td>
+								<td><input id="notes" name="notes" rows="5" cols="10" value="" style="width:100%;"/></td>
+							</tr>
+							<tr>
+								<td colspan="2" align="center"><input id="btn1" type="submit" value="Save" /></td>
+							</tr>
+						</table>
+					</form> 
+				</div>
+			</td>
+		</tr>
+	</table>
+</body>
+</html>
