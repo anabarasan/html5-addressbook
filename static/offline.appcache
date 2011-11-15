@@ -1,0 +1,31 @@
+CACHE MANIFEST
+
+CACHE:
+    #IMAGES
+    images/delete.png
+
+    #SCRIPTS
+    js/addressbook.js
+    js/form2object.js
+    js/json2.js
+	js/browserdetect.js
+
+# VERSION 1.5
+# auto reload after offline cache update.
+# added Browser Detection.
+
+# VERSION 1.4
+# event handling to detect changes in the app and sync offline cache  
+
+# VERSION 1.3
+# made the app into offline webapp
+
+# VERSION 1.2
+# added option to edit contact
+
+# VERSION 1.1
+# added option to delete contact
+
+# VERSION 1.0
+# Basic Application.
+# add contacts, view contacts
