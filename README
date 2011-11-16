@@ -1,3 +1,14 @@
 html5-addressbook
 
 A simple addressbook made using html5 local storage.
+runs using Google App Engine Server.
+
+
+HTML 5 Local Storage API
+
+getItem(key)
+setItem(key,value)
+removeItem(key)
+clear()
+key(index)
+length
