@@ -10,6 +10,9 @@ CACHE:
     js/json2.js
 	js/browserdetect.js
 
+# VERSION 1.6
+# sync to server functionality
+
 # VERSION 1.5
 # auto reload after offline cache update.
 # added Browser Detection.
