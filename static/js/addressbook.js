@@ -52,7 +52,7 @@ function addContact() {
 	Keys();
     var bookKey = document.getElementById('firstname').value + document.getElementById('lastname').value;
     var formData = form2object('frmAddressEditor');
-
+	console.info(formData);
 	if(bookKey){
 		if (localStorage.getItem(bookKey) == null) {
 			bookKeys.push(bookKey);
@@ -133,4 +133,54 @@ webappCache.addEventListener("error", errorCache, false);
 /***********************************************************************
  * http://www.thecssninja.com/javascript/how-to-create-offline-webapps-on-the-iphone
 ***********************************************************************/
+
+//Sync to store related
+
+function sync(toWhere){
+	var request = new XMLHttpRequest();
+	request.onreadystatechange=function(){
+		if(request.readyState==4 && request.status==200){
+			if(toWhere=="Server"){
+				alert(request.responseText);
+			} else if(toWhere=="Local"){
+				payload = request.responseText;
+				getPayLoad(payload);
+			}
+		}
+	}
+	
+	if(toWhere=="Server"){
+		payload = genPayLoad();
+		request.open("POST","sync",true);
+		request.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+		request.send("sync=server&payload="+payload);
+	} else if(toWhere=="Local"){
+		request.open("GET","sync?sync=local",true);
+		request.send();
+	}
+}
+
+function genPayLoad(){
+	var addressbook = "{\"root\":\"addressbook\",";
+	
+	for (i=0; i<=localStorage.length-1; i++) {  
+		key = localStorage.key(i);  
+		val = localStorage.getItem(key);  
+		
+		if(key=="addressbook"){
+			val = "{" + val + "}";
+		}
+		
+		addressbook = addressbook + "\"" + key + "\" :" + val + ",";
+		
+    }
+    
+    addressbook = addressbook.substr(0,addressbook.length-1) + "}";
+	console.info(addressbook);
+	return addressbook
+}
+
+function getPayLoad(payload){
+	console.info(payload);
+}
 
