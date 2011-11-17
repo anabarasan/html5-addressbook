@@ -8,10 +8,11 @@ CACHE:
     js/addressbook.js
     js/form2object.js
     js/json2.js
-	js/browserdetect.js
+    js/browserdetect.js
 
 # VERSION 1.6
 # sync to server functionality
+# sync to local skeleton
 
 # VERSION 1.5
 # auto reload after offline cache update.
